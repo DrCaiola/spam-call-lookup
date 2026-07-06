@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who Called? — Free Spam Call Lookup</title>
+  <meta name="description" content="Free reverse phone spam lookup using public FCC complaint records. No paywall, no sign-up, no tracking.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📵</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="hero">
+      <div class="badge">100% free &middot; public FCC data &middot; no sign-up, no tracking</div>
+      <h1>Who Called?</h1>
+      <p class="tagline">Check a phone number against real federal complaint records to see if it's a likely spam caller.</p>
+    </header>
+
+    <form id="lookup-form" class="lookup" autocomplete="off">
+      <div class="input-wrap">
+        <span class="flag">+1</span>
+        <input id="phone-input" type="tel" inputmode="tel" placeholder="(555) 123-4567"
+               aria-label="Phone number to look up" maxlength="18" autofocus>
+      </div>
+      <button type="submit" id="lookup-btn">Look&nbsp;up</button>
+    </form>
+    <p id="input-error" class="input-error" role="alert" hidden></p>
+
+    <section id="results" hidden>
+      <div id="verdict" class="verdict">
+        <div class="verdict-icon" id="verdict-icon"></div>
+        <div class="verdict-text">
+          <h2 id="verdict-title"></h2>
+          <p id="verdict-sub"></p>
+        </div>
+      </div>
+
+      <div class="cards">
+        <div class="card" id="card-number">
+          <h3>Number info</h3>
+          <dl id="number-info"></dl>
+        </div>
+        <div class="card" id="card-stats">
+          <h3>Complaint summary</h3>
+          <dl id="complaint-stats"></dl>
+        </div>
+      </div>
+
+      <div class="card" id="card-chart" hidden>
+        <h3>Complaints by year</h3>
+        <div id="year-chart" class="year-chart" role="img" aria-label="Bar chart of complaints per year"></div>
+      </div>
+
+      <div class="card" id="card-list" hidden>
+        <h3>Most recent complaints <span id="list-note" class="muted"></span></h3>
+        <div class="table-wrap">
+          <table id="complaint-table">
+            <thead>
+              <tr><th>Date</th><th>Type</th><th>Method</th><th>Reported from</th></tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card actions">
+        <h3>Dig deeper / fight back</h3>
+        <div class="action-links" id="action-links"></div>
+      </div>
+    </section>
+
+    <div id="loading" class="loading" hidden>
+      <div class="spinner"></div>
+      <p>Checking federal complaint records…</p>
+    </div>
+
+    <footer>
+      <p>
+        Data: <a href="https://opendata.fcc.gov/Consumer/CGB-Consumer-Complaints-Data/vakf-fz8e" target="_blank" rel="noopener">FCC Consumer Complaints Data</a>
+        (unwanted-call complaints filed with the FCC) and the
+        <a href="https://reports.nanpa.com/" target="_blank" rel="noopener">NANPA area code registry</a>.
+        Everything runs in your browser — the number you enter is sent only to the FCC's public API.
+      </p>
+      <p class="muted">
+        A number with no complaints isn't guaranteed safe (spammers rotate and spoof caller IDs constantly),
+        and a listed number may be spoofed and not belong to the real spammer. Use your judgment.
+        Not affiliated with the FCC. <a href="https://github.com/DrCaiola/spam-call-lookup" target="_blank" rel="noopener">Source on GitHub</a>.
+      </p>
+    </footer>
+  </main>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
