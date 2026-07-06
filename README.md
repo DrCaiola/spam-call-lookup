@@ -15,6 +15,11 @@ spam?"* is public:
 - **[NANPA area code registry](https://reports.nanpa.com/)** — the official North
   American Numbering Plan data, used for area-code region / time zone / toll-free
   identification (bundled as a compact JSON).
+- **[NANPA central office code assignments](https://www.nanpa.com/reports/co-code-reports/cocodes_assign)** —
+  the official NPA-NXX prefix database (updated daily, refreshed here weekly by a
+  GitHub Action), which reveals the **carrier that owns the prefix** and its
+  **rate center** (the town the number is nominally from). Bundled as per-area-code
+  JSON shards so a lookup fetches only ~30 KB.
 
 ## How it works
 
@@ -26,8 +31,12 @@ that caller ID, then renders:
   complaint volume and recency,
 - a **complaint summary** (total, most recent, most common call type, states),
 - a **complaints-by-year chart** and the most recent individual reports,
-- **area code info** from the bundled NANPA data,
-- one-click links to Google the number or report it to the FCC/FTC.
+- a **tile map** of which states the complaints were filed from,
+- **carrier & prefix location** from the bundled NANPA data — including a flag for
+  VoIP/wholesale carriers favored by robocallers, and a warning when the prefix is
+  unassigned (meaning a call from it was spoofed),
+- a guided **“Report this caller”** flow (FCC vs FTC, copy-paste ready) and
+  blocking instructions for iPhone/Android.
 
 The number you type is sent to exactly one place: the FCC's public API.
 
@@ -40,11 +49,16 @@ python -m http.server 8000
 # then open http://localhost:8000
 ```
 
-## Refresh the bundled area-code data
+## Refresh the bundled NANPA data
+
+A [GitHub Action](.github/workflows/refresh-data.yml) does this weekly; to run it
+manually:
 
 ```sh
 curl -sL https://reports.nanpa.com/public/npa_report.csv -o data/npa_report_raw.csv
+curl -sL https://reports.nanpa.com/public/CoCodeAssignment_Utilized_AllStates_Public.zip -o data/cocodes_raw.zip
 python data/convert_npa.py
+python data/convert_nxx.py
 ```
 
 ## Caveats
@@ -54,6 +68,9 @@ python data/convert_npa.py
   belong to an innocent party.
 - Complaint data reflects what consumers filed with the FCC; it lags reality and
   is not a caller-identity database.
+- **Carrier reflects the prefix's original assignment.** Numbers ported to another
+  carrier keep their prefix, so the listed carrier can be out of date for
+  individual numbers.
 - Not affiliated with the FCC, FTC, or NANPA.
 
 ## License

@@ -33,6 +33,7 @@
           <h2 id="verdict-title"></h2>
           <p id="verdict-sub"></p>
         </div>
+        <button id="verdict-report" class="verdict-report" type="button" hidden>Report this caller ↓</button>
       </div>
 
       <div class="cards">
@@ -51,6 +52,12 @@
         <div id="year-chart" class="year-chart" role="img" aria-label="Bar chart of complaints per year"></div>
       </div>
 
+      <div class="card" id="card-map" hidden>
+        <h3>Where reports came from</h3>
+        <div id="state-map" class="state-map" role="img" aria-label="Tile map of US states shaded by number of complaints"></div>
+        <p class="muted map-note">Shading = complaints filed from that state about this number.</p>
+      </div>
+
       <div class="card" id="card-list" hidden>
         <h3>Most recent complaints <span id="list-note" class="muted"></span></h3>
         <div class="table-wrap">
@@ -63,8 +70,22 @@
         </div>
       </div>
 
+      <div class="card report-card" id="card-report">
+        <h3>📣 Report this caller</h3>
+        <p class="report-intro">Reports are what feed the database you just searched — every one makes the next lookup smarter and builds the enforcement case. It takes about a minute.</p>
+        <div class="report-number">
+          <span id="report-number-text" class="report-number-text"></span>
+          <button id="copy-number" class="copy-btn" type="button">Copy number</button>
+        </div>
+        <ol class="report-steps">
+          <li><strong>Robocall, spoofed caller ID, or scam?</strong> → <a id="report-fcc" href="https://consumercomplaints.fcc.gov/hc/en-us/requests/new?ticket_form_id=39744" target="_blank" rel="noopener">File with the FCC</a> (choose “Phone” → “Unwanted calls”).</li>
+          <li><strong>Telemarketer ignoring the Do Not Call list?</strong> → <a id="report-ftc" href="https://www.donotcall.gov/report.html" target="_blank" rel="noopener">Report at donotcall.gov</a> — it asks only for the number, date, and time.</li>
+          <li><strong>Then block it:</strong> iPhone — Phone app → Recents → ⓘ → “Block this Caller”. Android — Phone app → hold the number → “Block/report spam”. Or forward spam <em>texts</em> to <strong>7726</strong> (SPAM) to report to your carrier.</li>
+        </ol>
+      </div>
+
       <div class="card actions">
-        <h3>Dig deeper / fight back</h3>
+        <h3>Dig deeper</h3>
         <div class="action-links" id="action-links"></div>
       </div>
     </section>

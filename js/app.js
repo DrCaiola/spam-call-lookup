@@ -18,6 +18,22 @@
   const loading = $("loading");
 
   let areaCodes = null; // lazy-loaded { file_date, codes: { "203": {...} } }
+  const nxxCache = {}; // per-area-code prefix shards: { "719": { "452": [rateCenter, carrier] } }
+
+  // Wholesale/VoIP carriers whose numbers are disproportionately used for robocalls.
+  const VOIP_CARRIERS = /onvoy|inteliquent|sinch|bandwidth\.com|bandwidth inc|twilio|telnyx|peerless|level 3|centurylink communications|lumen|vonage|magicjack|ymax|voip|commio|thinq|teleport|track(?:fone)? wireless/i;
+
+  // NPR-style tile grid map: state -> [col, row]
+  const STATE_TILES = {
+    AK: [0, 0], ME: [11, 0],
+    VT: [10, 1], NH: [11, 1],
+    WA: [1, 2], ID: [2, 2], MT: [3, 2], ND: [4, 2], MN: [5, 2], IL: [6, 2], WI: [7, 2], MI: [8, 2], NY: [9, 2], RI: [10, 2], MA: [11, 2],
+    OR: [1, 3], NV: [2, 3], WY: [3, 3], SD: [4, 3], IA: [5, 3], IN: [6, 3], OH: [7, 3], PA: [8, 3], NJ: [9, 3], CT: [10, 3],
+    CA: [1, 4], UT: [2, 4], CO: [3, 4], NE: [4, 4], MO: [5, 4], KY: [6, 4], WV: [7, 4], VA: [8, 4], MD: [9, 4], DE: [10, 4],
+    AZ: [2, 5], NM: [3, 5], KS: [4, 5], AR: [5, 5], TN: [6, 5], NC: [7, 5], SC: [8, 5], DC: [9, 5],
+    OK: [4, 6], LA: [5, 6], MS: [6, 6], AL: [7, 6], GA: [8, 6],
+    HI: [0, 7], TX: [4, 7], FL: [8, 7], PR: [11, 7],
+  };
 
   // ---------- number parsing / formatting ----------
 
@@ -65,6 +81,17 @@
       areaCodes = { codes: {} }; // area code info is a nice-to-have; don't block the lookup
     }
     return areaCodes;
+  }
+
+  async function fetchNxx(npa) {
+    if (npa in nxxCache) return nxxCache[npa];
+    try {
+      const res = await fetch(`data/nxx/${npa}.json`);
+      nxxCache[npa] = res.ok ? await res.json() : null;
+    } catch {
+      nxxCache[npa] = null; // carrier info is a nice-to-have; don't block the lookup
+    }
+    return nxxCache[npa];
   }
 
   async function fetchComplaints(digits) {
@@ -141,26 +168,42 @@
     };
   }
 
-  function renderNumberInfo(digits) {
+  const titleCase = (s) => s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+
+  function renderNumberInfo(digits, nxx) {
     const dl = $("number-info");
     dl.replaceChildren();
     dl.append(dlRow("Number", pretty(digits)));
 
     const info = areaCodes?.codes?.[digits.slice(0, 3)];
     if (info) {
-      const titleCase = (s) => s.toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
       if (info.service) {
         dl.append(dlRow("Type", info.service));
       } else if (info.loc) {
         const loc = info.loc.length <= 2 ? info.loc : titleCase(info.loc);
         dl.append(dlRow("Area code region", loc + (info.country && info.country !== "US" ? `, ${titleCase(info.country)}` : "")));
       }
-      if (info.tz) {
+      if (info.tz && !info.service) {
         const tzNames = { E: "Eastern", C: "Central", M: "Mountain", P: "Pacific", A: "Atlantic", H: "Hawaii", AK: "Alaska", N: "Newfoundland" };
         dl.append(dlRow("Time zone", tzNames[info.tz] || info.tz));
       }
     } else {
       dl.append(dlRow("Area code", `${digits.slice(0, 3)} (not in the NANPA registry — suspicious)`));
+    }
+
+    const prefix = nxx?.[digits.slice(3, 6)];
+    if (prefix) {
+      const [rateCenter, carrier] = prefix;
+      if (rateCenter) dl.append(dlRow("Prefix location", titleCase(rateCenter)));
+      if (carrier) {
+        const row = dlRow("Carrier (prefix owner)", titleCase(carrier));
+        if (VOIP_CARRIERS.test(carrier)) {
+          row.querySelector("dd").append(el("span", " — VoIP/wholesale, often used by robocallers", "carrier-flag"));
+        }
+        dl.append(row);
+      }
+    } else if (nxx && !areaCodes?.codes?.[digits.slice(0, 3)]?.service) {
+      dl.append(dlRow("Prefix", `${digits.slice(0, 3)}-${digits.slice(3, 6)} is unassigned — a real call from it is almost certainly spoofed`));
     }
   }
 
@@ -208,6 +251,81 @@
     card.hidden = false;
   }
 
+  function renderMap(rows) {
+    const card = $("card-map");
+    const wrap = $("state-map");
+    wrap.replaceChildren();
+
+    const byState = {};
+    for (const r of rows) {
+      const s = (r.state || "").trim().toUpperCase();
+      if (STATE_TILES[s]) byState[s] = (byState[s] || 0) + 1;
+    }
+    const states = Object.keys(byState);
+    if (states.length === 0) { card.hidden = true; return; }
+
+    const max = Math.max(...states.map((s) => byState[s]));
+    const SIZE = 46, GAP = 5;
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("viewBox", `0 0 ${12 * (SIZE + GAP)} ${8 * (SIZE + GAP)}`);
+
+    for (const [state, [col, row]] of Object.entries(STATE_TILES)) {
+      const count = byState[state] || 0;
+      const g = document.createElementNS(svgNS, "g");
+      const rect = document.createElementNS(svgNS, "rect");
+      rect.setAttribute("x", col * (SIZE + GAP));
+      rect.setAttribute("y", row * (SIZE + GAP));
+      rect.setAttribute("width", SIZE);
+      rect.setAttribute("height", SIZE);
+      rect.setAttribute("rx", 6);
+      rect.setAttribute("class", count ? "tile hit" : "tile");
+      if (count) rect.setAttribute("fill-opacity", (0.25 + 0.75 * (count / max)).toFixed(2));
+
+      const title = document.createElementNS(svgNS, "title");
+      title.textContent = `${state}: ${count} complaint${count === 1 ? "" : "s"}`;
+      rect.append(title);
+      g.append(rect);
+
+      const label = document.createElementNS(svgNS, "text");
+      label.setAttribute("x", col * (SIZE + GAP) + SIZE / 2);
+      label.setAttribute("y", row * (SIZE + GAP) + (count ? SIZE / 2 - 3 : SIZE / 2 + 5));
+      label.setAttribute("class", count ? "tile-label hit" : "tile-label");
+      label.textContent = state;
+      g.append(label);
+
+      if (count) {
+        const num = document.createElementNS(svgNS, "text");
+        num.setAttribute("x", col * (SIZE + GAP) + SIZE / 2);
+        num.setAttribute("y", row * (SIZE + GAP) + SIZE / 2 + 15);
+        num.setAttribute("class", "tile-count");
+        num.textContent = count;
+        g.append(num);
+      }
+      svg.append(g);
+    }
+    wrap.append(svg);
+    card.hidden = false;
+  }
+
+  function renderReport(digits, total) {
+    $("report-number-text").textContent = pretty(digits);
+    const cta = $("verdict-report");
+    cta.hidden = total === 0;
+
+    const copyBtn = $("copy-number");
+    copyBtn.textContent = "Copy number";
+    copyBtn.onclick = async () => {
+      try {
+        await navigator.clipboard.writeText(dashed(digits));
+        copyBtn.textContent = "Copied ✓";
+        setTimeout(() => { copyBtn.textContent = "Copy number"; }, 1600);
+      } catch {
+        copyBtn.textContent = dashed(digits); // clipboard blocked — at least show it selectable
+      }
+    };
+  }
+
   function renderTable(rows, total) {
     const card = $("card-list");
     const tbody = $("complaint-table").querySelector("tbody");
@@ -233,8 +351,6 @@
     wrap.replaceChildren();
     const links = [
       [`Google this number`, `https://www.google.com/search?q=${encodeURIComponent(`"${dashed(digits)}" OR "${pretty(digits)}"`)}`],
-      ["Report to the FCC", "https://consumercomplaints.fcc.gov/hc/en-us/requests/new?ticket_form_id=39744"],
-      ["Report to the FTC", "https://www.donotcall.gov/report.html"],
       ["Join the Do Not Call registry", "https://www.donotcall.gov/register.html"],
     ];
     for (const [label, href] of links) {
@@ -254,7 +370,11 @@
     loading.hidden = false;
     btn.disabled = true;
     try {
-      const [, complaints] = await Promise.all([fetchAreaCodes(), fetchComplaints(digits)]);
+      const [, nxx, complaints] = await Promise.all([
+        fetchAreaCodes(),
+        fetchNxx(digits.slice(0, 3)),
+        fetchComplaints(digits),
+      ]);
       const { rows, total } = complaints;
 
       const v = verdictFor(total, rows);
@@ -264,10 +384,12 @@
       $("verdict-title").textContent = v.title;
       $("verdict-sub").textContent = v.sub;
 
-      renderNumberInfo(digits);
+      renderNumberInfo(digits, nxx);
       renderStats(total, rows);
       renderYearChart(rows);
+      renderMap(rows);
       renderTable(rows, total);
+      renderReport(digits, total);
       renderActions(digits);
 
       results.hidden = false;
@@ -280,6 +402,10 @@
       btn.disabled = false;
     }
   }
+
+  $("verdict-report").addEventListener("click", () => {
+    $("card-report").scrollIntoView({ behavior: "smooth", block: "start" });
+  });
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
