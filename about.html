@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How it works — Who Called?</title>
+  <meta name="description" content="A plain-English explanation of how Who Called? checks numbers for spam using public government data — and what it can and can't tell you.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📵</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .back-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 26px;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    .about-hero { text-align: center; margin-bottom: 30px; }
+    .about-hero h1 { font-size: clamp(1.9rem, 5vw, 2.6rem); margin: 0 0 10px; letter-spacing: -0.02em; }
+    .about-hero p { color: var(--text-muted); max-width: 560px; margin: 0 auto; font-size: 1.05rem; }
+
+    /* Live counter */
+    .big-stat {
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--bg-card);
+      padding: 26px 20px;
+      margin-bottom: 34px;
+    }
+    .big-stat .num {
+      font-size: clamp(2rem, 7vw, 3rem);
+      font-weight: 800;
+      font-variant-numeric: tabular-nums;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+    }
+    .big-stat .label { color: var(--text-muted); margin-top: 4px; font-size: 0.98rem; }
+
+    /* Journey stepper */
+    .journey { margin-bottom: 10px; }
+    .journey-track {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      position: relative;
+      margin-bottom: 14px;
+    }
+    .journey-step {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 12px 14px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.25s, transform 0.25s, opacity 0.25s;
+      opacity: 0.55;
+    }
+    .journey-step .emoji { font-size: 1.9rem; display: block; margin-bottom: 8px; transition: transform 0.3s; }
+    .journey-step .step-name { font-weight: 700; font-size: 0.92rem; }
+    .journey-step.active {
+      opacity: 1;
+      border-color: var(--accent);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 18px color-mix(in srgb, var(--accent) 18%, transparent);
+    }
+    .journey-step.active .emoji { transform: scale(1.25); }
+    .journey-step.done { opacity: 0.85; }
+    .journey-step.done .step-name::after { content: " ✓"; color: var(--ok); }
+
+    .journey-bar {
+      height: 5px;
+      background: color-mix(in srgb, var(--border) 55%, transparent);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-bottom: 18px;
+    }
+    .journey-bar .fill {
+      height: 100%;
+      width: 0%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 0.55s ease;
+    }
+
+    .journey-detail {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      min-height: 108px;
+    }
+    .journey-detail h3 { margin: 0 0 8px; font-size: 1.05rem; }
+    .journey-detail p { margin: 0; color: var(--text-muted); font-size: 0.97rem; }
+    .journey-controls { text-align: center; margin: 16px 0 0; }
+    .journey-controls button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      padding: 9px 18px;
+      cursor: pointer;
+    }
+    .journey-controls button:hover { filter: brightness(1.12); }
+    .journey-controls .hint { color: var(--text-muted); font-size: 0.85rem; margin-top: 8px; }
+
+    @media (max-width: 640px) {
+      .journey-track { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    /* Sections */
+    .about-section { margin: 38px 0; }
+    .about-section > h2 { font-size: 1.35rem; margin: 0 0 6px; letter-spacing: -0.01em; }
+    .about-section > .section-sub { color: var(--text-muted); margin: 0 0 18px; font-size: 0.98rem; }
+
+    .source-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 640px) { .source-cards { grid-template-columns: 1fr; } }
+    .source-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+    }
+    .source-card .emoji { font-size: 1.7rem; }
+    .source-card h3 { margin: 8px 0 8px; font-size: 1.05rem; }
+    .source-card p { margin: 0 0 10px; color: var(--text-muted); font-size: 0.94rem; }
+    .source-card p:last-child { margin-bottom: 0; }
+    .source-card a { color: var(--accent); }
+    .source-card.not-used { border-style: dashed; opacity: 0.9; }
+
+    .plain-list { margin: 0; padding: 0; list-style: none; }
+    .plain-list li {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
+      font-size: 0.97rem;
+    }
+    .plain-list li:last-child { border-bottom: none; }
+    .plain-list .mark { flex-shrink: 0; }
+    .plain-list .body { color: var(--text-muted); }
+    .plain-list .body strong { color: var(--text); }
+
+    .cta-row { text-align: center; margin-top: 40px; }
+    .cta-row a {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.05rem;
+      border-radius: var(--radius);
+      padding: 14px 30px;
+    }
+    .cta-row a:hover { filter: brightness(1.12); }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <a class="back-link" href="./">← Back to the lookup</a>
+
+    <header class="about-hero">
+      <h1>How this site works</h1>
+      <p>No magic, no secret databases, no fees. Just public government records, read by your own browser. Here's the whole story.</p>
+    </header>
+
+    <div class="big-stat">
+      <div class="num" id="live-count">1,400,000+</div>
+      <div class="label">unwanted-call complaints filed by real people with the FCC — that's the database you're searching<span id="live-note"></span></div>
+    </div>
+
+    <section class="about-section journey">
+      <h2>The journey of one lookup</h2>
+      <p class="section-sub">Click play (or tap any step) to follow what happens in the second after you hit “Look up.”</p>
+
+      <div class="journey-track" id="journey-track"></div>
+      <div class="journey-bar"><div class="fill" id="journey-fill"></div></div>
+      <div class="journey-detail">
+        <h3 id="journey-title"></h3>
+        <p id="journey-text"></p>
+      </div>
+      <div class="journey-controls">
+        <button id="journey-play" type="button">▶ Play</button>
+        <p class="hint">The whole thing happens in your browser and takes about a second.</p>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>Where the data comes from</h2>
+      <p class="section-sub">Two public sources — and one thing we deliberately don't use.</p>
+      <div class="source-cards">
+        <div class="source-card">
+          <span class="emoji">🏛️</span>
+          <h3>FCC complaint records</h3>
+          <p>When someone in the US gets a robocall or spam call, they can report it to the Federal Communications Commission — the government agency that regulates phones. The FCC publishes every complaint (minus personal details) in a <a href="https://opendata.fcc.gov/Consumer/CGB-Consumer-Complaints-Data/vakf-fz8e" target="_blank" rel="noopener">free public database</a>: the number that called, what kind of call it was, when, and what state it was reported from.</p>
+          <p>This site searches that database <strong>live</strong> — the moment you look up a number, your browser asks the FCC's servers directly. We never make a copy, so results are always current.</p>
+        </div>
+        <div class="source-card">
+          <span class="emoji">📖</span>
+          <h3>The phone system's own directory</h3>
+          <p>Every North American phone number starts with an area code and a three-digit prefix. Those aren't random: an official registry (<a href="https://www.nanpa.com/" target="_blank" rel="noopener">NANPA</a>, the organization that manages phone numbers for the US and Canada) records which phone company owns each prefix and which town it belongs to.</p>
+          <p>We keep a copy of that registry here, and a robot updates it from the source <strong>every Monday</strong>. It's how the site can say “this prefix belongs to T-Mobile in Colorado Springs” — or warn you that a prefix doesn't exist at all, which means the caller ID was faked.</p>
+        </div>
+        <div class="source-card not-used">
+          <span class="emoji">🚫</span>
+          <h3>What we don't use: paid name lookups</h3>
+          <p>Those “find out who owns this number!” sites charge money because the actual <em>name</em> attached to a number is private data owned by phone carriers, who sell access to it. It is not public record.</p>
+          <p>We think the question you actually want answered — <strong>“is this call spam?”</strong> — doesn't need any of that. The public data answers it for free.</p>
+        </div>
+        <div class="source-card">
+          <span class="emoji">🔍</span>
+          <h3>Check our work</h3>
+          <p>Every line of code behind this site is <a href="https://github.com/DrCaiola/spam-call-lookup" target="_blank" rel="noopener">published openly on GitHub</a>, including the scripts that fetch the data. Anyone can read it, verify it, or run their own copy.</p>
+          <p>No accounts, no ads, no analytics, no cookies. Hosting a page like this costs nothing, so nothing needs to be paid for with your data.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section">
+      <h2>What it can — and can't — tell you</h2>
+      <p class="section-sub">Honesty matters more than looking clever. Here are the limits, plainly.</p>
+      <ul class="plain-list">
+        <li><span class="mark">✅</span><span class="body"><strong>Lots of complaints = strong signal.</strong> If hundreds of people across dozens of states reported a number, you can be confident calls from it are unwanted.</span></li>
+        <li><span class="mark">⚠️</span><span class="body"><strong>Zero complaints doesn't mean safe.</strong> Spammers switch numbers constantly, and brand-new spam numbers haven't been reported yet. Treat any unknown caller with normal caution.</span></li>
+        <li><span class="mark">⚠️</span><span class="body"><strong>Caller ID can be faked.</strong> Scammers often display someone else's real number (even Apple's official support line gets impersonated). A heavily-reported number might belong to an innocent party whose number was spoofed.</span></li>
+        <li><span class="mark">⚠️</span><span class="body"><strong>The carrier shown can be out of date.</strong> When people switch phone companies they keep their number, so the company listed for a prefix is who it was originally assigned to.</span></li>
+        <li><span class="mark">✅</span><span class="body"><strong>Your reports make it better.</strong> The database is built from ordinary people taking a minute to file a complaint. When you report a spam call, the next person who looks it up gets a better answer.</span></li>
+      </ul>
+    </section>
+
+    <section class="about-section">
+      <h2>Your privacy</h2>
+      <ul class="plain-list">
+        <li><span class="mark">🔒</span><span class="body">The number you type is sent to exactly <strong>one place</strong>: the FCC's public database, to search it. It isn't logged, stored, or sent anywhere else — this site has no server of its own to store anything on.</span></li>
+        <li><span class="mark">🔒</span><span class="body">No sign-up, no cookies, no trackers. We can't see who you are or what you searched — and neither can anyone else here, because “here” is just a folder of files.</span></li>
+      </ul>
+    </section>
+
+    <div class="cta-row">
+      <a href="./">Try a lookup →</a>
+    </div>
+
+    <footer>
+      <p class="muted">
+        Data: <a href="https://opendata.fcc.gov/Consumer/CGB-Consumer-Complaints-Data/vakf-fz8e" target="_blank" rel="noopener">FCC Consumer Complaints</a> ·
+        <a href="https://www.nanpa.com/reports/co-code-reports/cocodes_assign" target="_blank" rel="noopener">NANPA registry</a> ·
+        <a href="https://github.com/DrCaiola/spam-call-lookup" target="_blank" rel="noopener">Source code</a>.
+        Not affiliated with the FCC, FTC, or NANPA.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    (() => {
+      "use strict";
+
+      // ---- Live complaint counter (graceful if the API is unreachable) ----
+      const countEl = document.getElementById("live-count");
+      fetch("https://opendata.fcc.gov/resource/vakf-fz8e.json?$select=count(*)&$where=" +
+            encodeURIComponent("issue='Unwanted Calls'"))
+        .then((r) => r.json())
+        .then((j) => {
+          const target = parseInt(j?.[0]?.count, 10);
+          if (!target) return;
+          document.getElementById("live-note").textContent = " (live count)";
+          const start = performance.now(), dur = 1800, from = target * 0.9;
+          const tick = (t) => {
+            const p = Math.min(1, (t - start) / dur);
+            const eased = 1 - Math.pow(1 - p, 3);
+            countEl.textContent = Math.round(from + (target - from) * eased).toLocaleString();
+            if (p < 1) requestAnimationFrame(tick);
+          };
+          requestAnimationFrame(tick);
+        })
+        .catch(() => {}); // keep the static fallback text
+
+      // ---- Journey stepper ----
+      const STEPS = [
+        {
+          emoji: "📱", name: "You type a number",
+          title: "1. You type a number",
+          text: "The page tidies it up — (555) 123-4567, 555-123-4567 and +1 5551234567 are all the same number — and checks it's a real North American format. This happens on your device; nothing has been sent anywhere yet.",
+        },
+        {
+          emoji: "🏛️", name: "Your browser asks the FCC",
+          title: "2. Your browser asks the FCC",
+          text: "Your browser sends one question directly to the US government's public complaint database: “has anyone reported this number?” The answer comes straight back from the FCC — this site never sees or stores your search.",
+        },
+        {
+          emoji: "📖", name: "Phone-book facts added",
+          title: "3. Phone-book facts are added",
+          text: "The site checks the number's area code and prefix against the phone system's official registry: which company owns it, what town it's tied to, whether it's toll-free — or whether it doesn't exist at all (a sure sign of a faked caller ID).",
+        },
+        {
+          emoji: "⚖️", name: "You get a verdict",
+          title: "4. You get a verdict",
+          text: "Complaint count and recency become a plain-English rating — from “no complaints on file” to “very likely spam” — plus a map of where reports came from, and one-click ways to report or block the caller. Nothing about your search is saved.",
+        },
+      ];
+
+      const track = document.getElementById("journey-track");
+      const fill = document.getElementById("journey-fill");
+      const title = document.getElementById("journey-title");
+      const text = document.getElementById("journey-text");
+      const playBtn = document.getElementById("journey-play");
+      let current = -1, timer = null;
+
+      STEPS.forEach((s, i) => {
+        const div = document.createElement("div");
+        div.className = "journey-step";
+        div.setAttribute("role", "button");
+        div.setAttribute("tabindex", "0");
+        const em = document.createElement("span"); em.className = "emoji"; em.textContent = s.emoji;
+        const nm = document.createElement("span"); nm.className = "step-name"; nm.textContent = s.name;
+        div.append(em, nm);
+        const go = () => { stopAuto(); show(i); };
+        div.addEventListener("click", go);
+        div.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+        track.append(div);
+      });
+      const stepEls = [...track.children];
+
+      function show(i) {
+        current = i;
+        stepEls.forEach((elm, j) => {
+          elm.classList.toggle("active", j === i);
+          elm.classList.toggle("done", j < i);
+        });
+        fill.style.width = `${((i + 1) / STEPS.length) * 100}%`;
+        title.textContent = STEPS[i].title;
+        text.textContent = STEPS[i].text;
+      }
+
+      function stopAuto() {
+        if (timer) { clearInterval(timer); timer = null; }
+        playBtn.textContent = "▶ Replay";
+      }
+
+      function play() {
+        stopAuto();
+        playBtn.textContent = "⏸ Playing…";
+        show(0);
+        timer = setInterval(() => {
+          if (current >= STEPS.length - 1) { stopAuto(); return; }
+          show(current + 1);
+        }, 3400);
+      }
+
+      playBtn.addEventListener("click", play);
+      show(0);
+
+      // Auto-play once when the stepper scrolls into view
+      let played = false;
+      new IntersectionObserver((entries, obs) => {
+        if (entries.some((e) => e.isIntersecting) && !played) {
+          played = true;
+          play();
+          obs.disconnect();
+        }
+      }, { threshold: 0.4 }).observe(track);
+    })();
+  </script>
+</body>
+</html>
