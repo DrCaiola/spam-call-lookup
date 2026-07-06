@@ -279,6 +279,45 @@ h1 {
 .report-steps li:last-child { margin-bottom: 0; }
 .report-steps a { color: var(--accent); font-weight: 600; }
 
+/* Block-it instructions */
+.block-heading {
+  margin: 18px 0 10px;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+}
+.block-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 640px) { .block-grid { grid-template-columns: 1fr; } }
+.block-card {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 14px;
+}
+.block-os { font-weight: 700; font-size: 0.95rem; margin-bottom: 10px; }
+.block-path {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+.block-path span {
+  background: color-mix(in srgb, var(--border) 45%, transparent);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.block-path i { color: var(--text-muted); font-style: normal; font-size: 0.85rem; }
+.block-note { margin: 12px 0 0; color: var(--text-muted); font-size: 0.9rem; }
+
 /* Verdict report CTA */
 .verdict-report {
   margin-left: auto;
