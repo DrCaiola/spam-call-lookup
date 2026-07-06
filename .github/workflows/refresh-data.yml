@@ -1,0 +1,37 @@
+name: Refresh NANPA data
+
+on:
+  schedule:
+    - cron: "17 6 * * 1" # Mondays 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download latest NANPA reports
+        run: |
+          curl -sSL https://reports.nanpa.com/public/npa_report.csv -o data/npa_report_raw.csv
+          curl -sSL https://reports.nanpa.com/public/CoCodeAssignment_Utilized_AllStates_Public.zip -o data/cocodes_raw.zip
+
+      - name: Regenerate bundled JSON
+        run: |
+          python data/convert_npa.py
+          python data/convert_nxx.py
+
+      - name: Commit if changed
+        run: |
+          git add data/areacodes.json data/npa_report_raw.csv data/nxx
+          if git diff --cached --quiet; then
+            echo "No data changes."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Refresh NANPA area code and prefix data"
+          git push
