@@ -1,4 +1,4 @@
-File Date,09/07/2026
+File Date,09/14/2026
 NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,LOCATION,COUNTRY,IN_SERVICE,IN_SERVICE_DT,STATUS,PLANNING_LETTERS,NOTES,OVERLAY,OVERLAY_COMPLEX,PARENT_NPA_ID,SERVICE,TIME_ZONE,AREA_SERVED,MAP,IN_JEOPARDY,RELIEF_PLANNING_IN_PROGRESS,HOME_NPA_LOCAL_CALLS,HOME_NPA_TOLL_CALLS,FOREIGN_NPA_LOCAL_CALLS,FOREIGN_NPA_TOLL_CALLS,PERM_HNPA_LOCAL_CALLS,PERM_HNPA_TOLL_CALLS,PERM_HNPA_FOREIGN_LOCAL_CALLS,DIALING_PLAN_NOTES
 200,Easily Recognizable Code,Yes,,No,No,,N,,,N,,,,,,,,,,,,,No,,,,,,,,
 201,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,NJ,US,Y,01-Jan-1947,,277,,Yes,201/551,,,E,,277,No,No,10D,10D,1+10D,1+10D,1+10D,1+10D,NA,Calls between the 551 and 201 NPAs may be dialed as 10D. 1+10 digit permissible at service provider discretion.
@@ -309,7 +309,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 506,General Purpose Code,Yes,,No,Yes,01-Jan-1955,G,NEW BRUNSWICK,CANADA,Y,01-Jan-1955,,600 553,,Yes,428/506,,,A,,600,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
 507,General Purpose Code,Yes,,No,Yes,01-Jan-1954,G,MN,US,Y,01-Jan-1954,,616,,Yes,507/924,,,C,,616,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit dialing permissible at service providers discretion
 508,General Purpose Code,Yes,,No,Yes,02-Jul-1987,G,MA,US,Y,16-Jul-1988,,234 122 IL-87-07-003,,Yes,508/774,617,,E,,234,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion
-509,General Purpose Code,Yes,,No,Yes,01-Jan-1957,G,WA,US,Y,01-Jan-1957,,556 544,,No,,,,P,,,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
+509,General Purpose Code,Yes,,No,Yes,01-Jan-1957,G,WA,US,Y,01-Jan-1957,Active,556 544,,No,,,,P,,,No,Yes,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
 510,General Purpose Code,Yes,,No,Yes,25-Apr-1990,G,CA,US,Y,02-Sep-1991,,518 413 206 190 IL-90-06-023,,Yes,341/510,415,,P,,518,No,No,1+10D,1+10D,1+10D,1+10D,NA,NA,NA,
 511,Easily Recognizable Code,No,N11 Code,No,No,,,,,N,,,,,,,,,,,,,No,,,,,,,,
 512,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,TX,US,Y,01-Jan-1947,,438 233 158 IL-92-03-068,,Yes,512/737,,,C,,,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
