@@ -1,4 +1,4 @@
-File Date,09/21/2026
+File Date,09/28/2026
 NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,LOCATION,COUNTRY,IN_SERVICE,IN_SERVICE_DT,STATUS,PLANNING_LETTERS,NOTES,OVERLAY,OVERLAY_COMPLEX,PARENT_NPA_ID,SERVICE,TIME_ZONE,AREA_SERVED,MAP,IN_JEOPARDY,RELIEF_PLANNING_IN_PROGRESS,HOME_NPA_LOCAL_CALLS,HOME_NPA_TOLL_CALLS,FOREIGN_NPA_LOCAL_CALLS,FOREIGN_NPA_TOLL_CALLS,PERM_HNPA_LOCAL_CALLS,PERM_HNPA_TOLL_CALLS,PERM_HNPA_FOREIGN_LOCAL_CALLS,DIALING_PLAN_NOTES
 200,Easily Recognizable Code,Yes,,No,No,,N,,,N,,,,,,,,,,,,,No,,,,,,,,
 201,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,NJ,US,Y,01-Jan-1947,,277,,Yes,201/551,,,E,,277,No,No,10D,10D,1+10D,1+10D,1+10D,1+10D,NA,Calls between the 551 and 201 NPAs may be dialed as 10D. 1+10 digit permissible at service provider discretion.
@@ -300,7 +300,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 497,General Purpose Code,Yes,Expansion Code,Yes,No,,,,,N,,,,,,,,,,,,,No,,,,,,,,
 498,General Purpose Code,Yes,Expansion Code,Yes,No,,,,,N,,,,,,,,,,,,,No,,,,,,,,
 499,Easily Recognizable Code,Yes,Expansion Code,Yes,No,,,,,N,,,,,,,,,,,,,No,,,,,,,,
-500,Easily Recognizable Code,Yes,,No,Yes,19-May-1994,N,NANP AREA,US,Y,19-May-1994,,IL-94-05-005,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+500,Easily Recognizable Code,Yes,,No,Yes,19-May-1994,N,NANP AREA,US,Y,19-May-1994,,IL-94-05-005,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 501,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,AR,US,Y,01-Jan-1947,Trigger,556 544 310 302 295 33,,No,,,,C,,302,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
 502,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,KY,US,Y,01-Jan-1947,Trigger,155 140,,Yes,502/761,,,E,,,No,Yes,7D,1+10D,7D,1+10D,NA,NA,NA,
 503,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,OR,US,Y,01-Jan-1947,,359 203 182,,Yes,503/971,,,P,,359,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
@@ -321,30 +321,30 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 518,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,NY,US,Y,01-Jan-1947,,497,,Yes,518/838,,,E,,497,No,No,10D,10D,1+10D,1+10D,1+10D,1+10D,NA,1+10 digit permissible at service provider discretion
 519,General Purpose Code,Yes,,No,Yes,01-Jan-1953,G,ONTARIO,CANADA,Y,01-Jan-1953,,350 343 342,,Yes,226/382/519/548,,,E,,350,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
 520,General Purpose Code,Yes,,No,Yes,21-Jan-1994,G,AZ,US,Y,19-Mar-1995,,556 544 IL-94-01-030,,No,,602,,M,,,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
-521,General Purpose Code,Yes,,No,Yes,24-Mar-2017,N,NANP AREA,US,Y,21-Sep-2017,,511 505,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-522,Easily Recognizable Code,Yes,,No,Yes,01-Aug-2016,N,NANP AREA,US,Y,01-Aug-2016,,493 491,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-523,General Purpose Code,Yes,,No,Yes,13-Jun-2018,N,NANP AREA,US,Y,13-Nov-2018,,524 516,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-524,General Purpose Code,Yes,,No,Yes,04-May-2019,N,NANP AREA,US,Y,12-Jul-2019,,528 527,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-525,General Purpose Code,Yes,,No,Yes,13-Apr-2020,N,NANP AREA,US,Y,13-Jul-2020,,542 538,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-526,General Purpose Code,Yes,,No,Yes,16-Dec-2020,N,NANP AREA,US,Y,28-Jan-2021,,558 554,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-527,General Purpose Code,Yes,,No,Yes,12-Aug-2021,N,NANP AREA,US,Y,29-Sep-2021,,566 564,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-528,Easily Recognizable Code,Yes,,No,Yes,11-Feb-2022,N,NANP AREA,US,Y,02-Mar-2022,,585 580,"Non-Geographic Services ",No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-529,General Purpose Code,Yes,,No,Yes,29-Aug-2022,N,NANP AREA,US,Y,16-Sep-2022,,"602 601 ","Non-Geographic Services ",No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+521,General Purpose Code,Yes,,No,Yes,24-Mar-2017,N,NANP AREA,US,Y,21-Sep-2017,,511 505,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+522,Easily Recognizable Code,Yes,,No,Yes,01-Aug-2016,N,NANP AREA,US,Y,01-Aug-2016,,493 491,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+523,General Purpose Code,Yes,,No,Yes,13-Jun-2018,N,NANP AREA,US,Y,13-Nov-2018,,524 516,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+524,General Purpose Code,Yes,,No,Yes,04-May-2019,N,NANP AREA,US,Y,12-Jul-2019,,528 527,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+525,General Purpose Code,Yes,,No,Yes,13-Apr-2020,N,NANP AREA,US,Y,13-Jul-2020,,542 538,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+526,General Purpose Code,Yes,,No,Yes,16-Dec-2020,N,NANP AREA,US,Y,28-Jan-2021,,558 554,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+527,General Purpose Code,Yes,,No,Yes,12-Aug-2021,N,NANP AREA,US,Y,29-Sep-2021,,566 564,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+528,Easily Recognizable Code,Yes,,No,Yes,11-Feb-2022,N,NANP AREA,US,Y,02-Mar-2022,,585 580,"Non-Geographic Services ",No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+529,General Purpose Code,Yes,,No,Yes,29-Aug-2022,N,NANP AREA,US,Y,16-Sep-2022,,"602 601 ","Non-Geographic Services ",No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 530,General Purpose Code,Yes,,No,Yes,23-Jun-1997,G,CA,US,Y,01-Nov-1997,,621 556 544 108 072,,Yes,530/837,916,,P,,621,No,No,1+10D,1+10D,1+10D,1+10D,NA,NA,NA,
 531,General Purpose Code,Yes,,No,Yes,01-Jul-2009,G,NE,US,Y,26-Mar-2011,,410 397 393,,Yes,402/531,402,,C,,393,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
-532,General Purpose Code,Yes,,No,Yes,25-May-2023,N,NANP AREA,US,Y,04-Nov-2024,,628 615,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-533,Easily Recognizable Code,Yes,,No,Yes,03-Jan-2008,N,NANP AREA,US,Y,26-Sep-2009,,399 394 382 379 372,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+532,General Purpose Code,Yes,,No,Yes,25-May-2023,N,NANP AREA,US,Y,04-Nov-2024,,628 615,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+533,Easily Recognizable Code,Yes,,No,Yes,03-Jan-2008,N,NANP AREA,US,Y,26-Sep-2009,,399 394 382 379 372,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 534,General Purpose Code,Yes,,No,Yes,06-Nov-2008,G,WI,US,Y,14-Aug-2010,,384,,Yes,534/715,715,,C,,384,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion see PL 384
 535,General Purpose Code,Yes,Reserved for 5XX,Yes,No,,N,NANP AREA,,N,,,,,,,,Non-Geographic Services,,,,,No,,,,,,,,
 536,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
 537,General Purpose Code,Yes,,Yes,No,,G,,CANADA,N,,,,,,,,,,,,,No,,,,,,,,
-538,General Purpose Code,Yes,,No,Yes,02-Jul-2025,N,NANP AREA,US,Y,28-Oct-2025,,633 631,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+538,General Purpose Code,Yes,,No,Yes,02-Jul-2025,N,NANP AREA,US,Y,28-Oct-2025,,633 631,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 539,General Purpose Code,Yes,,No,Yes,04-Jan-2010,G,OK,US,Y,01-Apr-2011,,403,,Yes,539/918,918,,C,,403,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
 540,General Purpose Code,Yes,,No,Yes,09-Aug-1994,G,VA,US,Y,15-Jul-1995,,545 319 285 275 207 IL-94-08-005 IL-95-04-007,,Yes,540/826,703,,E,,545,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at each service provider discretion
 541,General Purpose Code,Yes,,No,Yes,19-May-1995,G,OR,US,Y,05-Nov-1995,,383 IL-95-05-007,,Yes,458/541,503,,MP,,,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion
-542,General Purpose Code,Yes,,No,Yes,16-Mar-2026,N,NANP AREA,US,Y,26-May-2026,,635 634,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
-543,General Purpose Code,Yes,,No,Yes,16-Jul-2026,N,NANP AREA,,N,,,636,Non-Geographic Services,,,,Non-Geographic Services,,,,,No,,,,,,,,
-544,Easily Recognizable Code,Yes,,No,Yes,30-Jun-2010,N,NANP AREA,US,Y,15-Dec-2010,,416 411 406,Non-geographic services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+542,General Purpose Code,Yes,,No,Yes,16-Mar-2026,N,NANP AREA,US,Y,26-May-2026,,635 634,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+543,General Purpose Code,Yes,,No,Yes,16-Jul-2026,N,NANP AREA,US,Y,21-Sep-2026,,638 636,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+544,Easily Recognizable Code,Yes,,No,Yes,30-Jun-2010,N,NANP AREA,US,Y,15-Dec-2010,,416 411 406,Non-geographic services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 545,General Purpose Code,Yes,Reserved for 5XX,Yes,No,,N,NANP AREA,,N,,,,,,,,Non-Geographic Services,,,,,No,,,,,,,,
 546,General Purpose Code,Yes,Reserved for 5XX,Yes,No,,N,NANP AREA,,N,,,,,,,,Non-Geographic Services,,,,,No,,,,,,,,
 547,General Purpose Code,Yes,Reserved for 5XX,Yes,No,,N,NANP AREA,,N,,,,,,,,Non-Geographic Services,,,,,No,,,,,,,,
@@ -366,7 +366,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 563,General Purpose Code,Yes,,No,Yes,20-Nov-2000,G,IA,US,Y,25-Mar-2001,,253,,No,,319,,C,,253,No,No,7D,1+10D,10D,1+10D,NA,NA,NA,
 564,General Purpose Code,Yes,,No,Yes,20-Sep-1999,G,WA,US,Y,28-Aug-2017,,620 492 298 239 196,,Yes,"206/564, 360/564 ",360,,P,,620,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10-digit dialing permissible at service provider discretion
 565,General Purpose Code,Yes,,No,Yes,27-May-2025,G,GA,US,N,06-Dec-2027,Active,637,,Yes,565/912,912,,E,,637,No,Yes,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit local dialing permissible at service provider’s discretion
-566,Easily Recognizable Code,Yes,,No,Yes,05-Aug-2011,N,NANP AREA,US,Y,17-Apr-2012,,436 432 424,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+566,Easily Recognizable Code,Yes,,No,Yes,05-Aug-2011,N,NANP AREA,US,Y,17-Apr-2012,,436 432 424,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 567,General Purpose Code,Yes,,No,Yes,14-Jul-2000,G,OH,US,Y,01-Jan-2002,,249,,Yes,419/567,419,,E,,249,No,No,10D,1+10D,10D,1+10D,1+10D,NA,NA,Carriers must provide permissive 1+10D dialing for Foreign NPA Local Calls in areas where they provide optional EAS
 568,General Purpose Code,Yes,,Yes,No,,G,,CANADA,N,,,,,,,,,,,,,No,,,,,,,,
 569,General Purpose Code,Yes,Reserved for 5XX,Yes,No,,N,NANP AREA,,N,,,,,,,,Non-Geographic Services,,,,,No,,,,,,,,
@@ -377,7 +377,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 574,General Purpose Code,Yes,,No,Yes,20-Jun-2001,G,IN,US,Y,15-Jan-2002,,556 544 309 296,,No,,219,,EC,,309,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
 575,General Purpose Code,Yes,,No,Yes,09-Nov-2006,G,NM,US,Y,07-Oct-2007,,556 544 380 358 328 312 292,,No,,505,,M,,358,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
 576,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
-577,Easily Recognizable Code,Yes,,No,Yes,27-Mar-2014,N,NANP AREA,US,Y,27-Mar-2014,,466 458,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+577,Easily Recognizable Code,Yes,,No,Yes,27-Mar-2014,N,NANP AREA,US,Y,27-Mar-2014,,466 458,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 578,General Purpose Code,Yes,Reserved for 5XX,Yes,No,,N,NANP AREA,,N,,,,,,,,Non-Geographic Services,,,,,No,,,,,,,,
 579,General Purpose Code,Yes,,No,Yes,04-Aug-2009,G,QUEBEC,CANADA,Y,21-Aug-2010,,401 395,,Yes,354/450/579,450,,E,,395,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
 580,General Purpose Code,Yes,,No,Yes,11-Sep-1997,G,OK,US,Y,01-Nov-1997,Active,085,,No,,405,,C,,,No,Yes,7D,1+10D,7D,1+10D,NA,NA,NA,
@@ -388,7 +388,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 585,General Purpose Code,Yes,,No,Yes,23-Mar-2001,G,NY,US,Y,15-Nov-2001,,278 270,,No,,716,,E,,270,No,No,7D,7D,1+10D,1+10D,NA,NA,NA,
 586,General Purpose Code,Yes,,No,Yes,08-Jul-1999,G,MI,US,Y,22-Sep-2001,,282 273 265 221 192,,No,,810,,E,,265,No,No,7D,1+10D,10D,1+10D,10D,NA,NA,
 587,General Purpose Code,Yes,,No,Yes,14-Jun-2007,G,ALBERTA,CANADA,Y,19-Sep-2008,,374 369 364,,Yes,368/403/587/780/825,780,,M,,,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
-588,Easily Recognizable Code,Yes,,No,Yes,09-Sep-2015,N,NANP AREA,US,Y,09-Sep-2015,,487 486 479,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
+588,Easily Recognizable Code,Yes,,No,Yes,09-Sep-2015,N,NANP AREA,US,Y,09-Sep-2015,,487 486 479,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 589,General Purpose Code,Yes,Reserved for 5XX,Yes,No,,N,NANP AREA,,N,,,,,,,,Non-Geographic Services,,,,,No,,,,,,,,
 590,General Purpose Code,Yes,Expansion Code,Yes,No,,,,,N,,,,,,,,,,,,,No,,,,,,,,
 591,General Purpose Code,Yes,Expansion Code,Yes,No,,,,,N,,,,,,,,,,,,,No,,,,,,,,
