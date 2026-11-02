@@ -1,4 +1,4 @@
-File Date,10/26/2026
+File Date,11/02/2026
 NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,LOCATION,COUNTRY,IN_SERVICE,IN_SERVICE_DT,STATUS,PLANNING_LETTERS,NOTES,OVERLAY,OVERLAY_COMPLEX,PARENT_NPA_ID,SERVICE,TIME_ZONE,AREA_SERVED,MAP,IN_JEOPARDY,RELIEF_PLANNING_IN_PROGRESS,HOME_NPA_LOCAL_CALLS,HOME_NPA_TOLL_CALLS,FOREIGN_NPA_LOCAL_CALLS,FOREIGN_NPA_TOLL_CALLS,PERM_HNPA_LOCAL_CALLS,PERM_HNPA_TOLL_CALLS,PERM_HNPA_FOREIGN_LOCAL_CALLS,DIALING_PLAN_NOTES
 200,Easily Recognizable Code,Yes,,No,No,,N,,,N,,,,,,,,,,,,,No,,,,,,,,
 201,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,NJ,US,Y,01-Jan-1947,,277,,Yes,201/551,,,E,,277,No,No,10D,10D,1+10D,1+10D,1+10D,1+10D,NA,Calls between the 551 and 201 NPAs may be dialed as 10D. 1+10 digit permissible at service provider discretion.
@@ -32,12 +32,12 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 229,General Purpose Code,Yes,,No,Yes,01-Oct-1999,G,GA,US,Y,01-Aug-2000,,288 202,,No,,912,,E,,,No,No,7D,1+10D,10D,1+10D,NA,NA,NA,
 230,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
 231,General Purpose Code,Yes,,No,Yes,11-Mar-1999,G,MI,US,Y,05-Jun-1999,,167,,No,,616,,E,,,No,No,7D,1+10D,10D,1+10D,10D,NA,NA,
-232,General Purpose Code,Yes,,Yes,No,,G,,,N,,,,,,,,,,,,,No,,,,,,,,
+232,General Purpose Code,Yes,,No,No,,G,,,N,,,,,,,,,,,,,No,,,,,,,,
 233,Easily Recognizable Code,Yes,,No,No,,N,,,N,,,,,,,,,,,,,No,,,,,,,,
 234,General Purpose Code,Yes,,No,Yes,05-Nov-1999,G,OH,US,Y,30-Oct-2000,,213,,Yes,234/330,330,,E,,213,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,Carriers must provide permissive 1+10D dialing for Foreign NPA Local Calls in areas where they provide optional EAS
 235,General Purpose Code,Yes,,No,Yes,02-May-2022,G,MO,US,Y,24-Mar-2024,,596,,Yes,235/573,573,,C,,596,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 permissive dialing at service provider discretion
 236,General Purpose Code,Yes,,No,Yes,28-Jul-2011,G,BRITISH COLUMBIA,CANADA,Y,01-Jun-2013,,514  450 428,,Yes,236/250/257/604/672/778,604,,P,,361,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
-237,General Purpose Code,Yes,,Yes,No,,G,,,N,,,,,,,,,,,,,No,,,,,,,,
+237,General Purpose Code,Yes,,No,No,,G,,,N,,,,,,,,,,,,,No,,,,,,,,
 238,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
 239,General Purpose Code,Yes,,No,Yes,06-Sep-2001,G,FL,US,Y,11-Mar-2002,,307,,No,,941,,E,,307,No,No,7D,1+10D,10D,1+10D,NA,NA,NA,
 240,General Purpose Code,Yes,,No,Yes,21-Jun-1996,G,MD,US,Y,01-Jun-1997,,603 IL-96-07-004 IL-96-06-009,,Yes,227/240/301,301,,E,,603,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit dialing for all calls permissible at service providers discretion.
@@ -253,7 +253,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 450,General Purpose Code,Yes,,No,Yes,17-Jul-1997,G,QUEBEC,CANADA,Y,13-Jun-1998,,401 395 076,,Yes,354/450/579,514,,E,,,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
 451,General Purpose Code,Yes,,No,Yes,15-Sep-2026,G,NC,US,N,,Active,,,Yes,451/828,828,,E,,,,Yes,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
 452,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
-453,General Purpose Code,Yes,,Yes,No,,G,,,N,,,,,,,,,,,,,No,,,,,,,,
+453,General Purpose Code,Yes,,No,No,,G,,,N,,,,,,,,,,,,,No,,,,,,,,
 454,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
 455,Easily Recognizable Code,Yes,,No,No,,N,,,N,,,,,,,,,,,,,No,,,,,,,,
 456,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
