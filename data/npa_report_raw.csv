@@ -1,11 +1,11 @@
-File Date,11/02/2026
+File Date,11/09/2026
 NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,LOCATION,COUNTRY,IN_SERVICE,IN_SERVICE_DT,STATUS,PLANNING_LETTERS,NOTES,OVERLAY,OVERLAY_COMPLEX,PARENT_NPA_ID,SERVICE,TIME_ZONE,AREA_SERVED,MAP,IN_JEOPARDY,RELIEF_PLANNING_IN_PROGRESS,HOME_NPA_LOCAL_CALLS,HOME_NPA_TOLL_CALLS,FOREIGN_NPA_LOCAL_CALLS,FOREIGN_NPA_TOLL_CALLS,PERM_HNPA_LOCAL_CALLS,PERM_HNPA_TOLL_CALLS,PERM_HNPA_FOREIGN_LOCAL_CALLS,DIALING_PLAN_NOTES
 200,Easily Recognizable Code,Yes,,No,No,,N,,,N,,,,,,,,,,,,,No,,,,,,,,
 201,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,NJ,US,Y,01-Jan-1947,,277,,Yes,201/551,,,E,,277,No,No,10D,10D,1+10D,1+10D,1+10D,1+10D,NA,Calls between the 551 and 201 NPAs may be dialed as 10D. 1+10 digit permissible at service provider discretion.
 202,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,DC,US,Y,01-Jan-1947,,547,,Yes,202/771,,,E,,547,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at each service providers discretion
 203,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,CT,US,Y,01-Jan-1947,,388 255 217 138,,Yes,203/475,,,E,,388,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 permissible at service providers discretion
 204,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,MANITOBA,CANADA,Y,01-Jan-1947,,592 584 435 433 419,,Yes,204/431/584,,,C,,435,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
-205,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,AL,US,Y,01-Jan-1947,,"523 289 284 ",,Yes,205/659,,,C,,523,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,1+10 digit permissible at each service providers discretion
+205,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,AL,US,Y,01-Jan-1947,,"523 289 284 ",,Yes,205/659,,,C,,523,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,1+10 digit permissible at each service provider's discretion
 206,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,WA,US,Y,01-Jan-1947,,620 492 298 239 019 IL-94-01-029 IL-91-01-045,,Yes,206/564,,,P,,620,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10-digit dialing permissible at service provider discretion
 207,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,ME,US,Y,01-Jan-1947,,,,No,,,,E,,,No,No,7D,7D,1+10D,1+10D,NA,NA,NA,
 208,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,ID,US,Y,01-Jan-1947,,490,,Yes,208/986,,,MP,,490,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
@@ -113,12 +113,12 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 310,General Purpose Code,Yes,,No,Yes,31-Aug-1990,G,CA,US,Y,02-Nov-1991,,347 250 IL-90-08-055,,Yes,310/424,213,,P,,347,No,No,1+10D,1+10D,1+10D,1+10D,NA,NA,NA,
 311,Easily Recognizable Code,No,N11 Code,No,No,,,,,N,,,,,,,,,,,,,No,,,,,,,,
 312,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,IL,US,Y,01-Jan-1947,,392 390 195,,Yes,312/872,,,C,,392,No,No,1+10D,1+10D,1+10D,1+10D,NA,NA,NA,
-313,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,MI,US,Y,01-Jan-1947,,618 066 IL-92-11-022 IL-89-12-022,,Yes,313/679,313,,E,,618,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at each service provider’s discretion.
+313,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,MI,US,Y,01-Jan-1947,,618 066 IL-92-11-022 IL-89-12-022,,Yes,313/679,313,,E,,618,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at each service provider's discretion.
 314,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,MO,US,Y,01-Jan-1947,,567 556 544 303 279 261,,Yes,314/557,,,C,,567,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
 315,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,NY,US,Y,01-Jan-1947,,485,,Yes,315/680,,,E,,485,No,No,10D,10D,1+10D,1+10D,1+10D,1+10D,NA,1+10 digit permissible at service provider discretion see PL-485
 316,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,KS,US,Y,01-Jan-1947,,245,,No,,,,C,,245,No,No,7D,1+10D,10D,1+10D,NA,NA,NA,
 317,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,IN,US,Y,01-Jan-1947,,496 482,,Yes,317/463,,,E,,496,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit for all HNPA and FNPA calls permissible at service provider discretion
-318,General Purpose Code,Yes,,No,Yes,01-Jan-1957,G,LA,US,Y,01-Jan-1957,,617 240 188,,Yes,318/457,,,C,,617,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit dialing permissible at service provider’s discretion
+318,General Purpose Code,Yes,,No,Yes,01-Jan-1957,G,LA,US,Y,01-Jan-1957,,617 240 188,,Yes,318/457,,,C,,617,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit dialing permissible at each service provider’s discretion
 319,General Purpose Code,Yes,,No,Yes,01-Jan-1947,G,IA,US,Y,01-Jan-1947,,556 544 253,,No,,,,C,,253,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
 320,General Purpose Code,Yes,,No,Yes,15-Sep-1995,G,MN,US,Y,17-Mar-1996,,IL-95-09-007 IL-96-01-017,,No,,612,,C,,,No,No,7D,1+10D,7D,1+10D,NA,NA,NA,
 321,General Purpose Code,Yes,,No,Yes,10-Feb-1999,G,FL,US,Y,01-Nov-1999,,556 544 519 325 323 168,"CO Codes in the 321 NPA will only be assigned in Brevard County for rate centers: Cocoa, Cocoa Beach, Eau Gallie, Melbourne and Titusville. See PL-519",No,,407,,E,,,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
@@ -134,7 +134,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 331,General Purpose Code,Yes,,No,Yes,23-Jul-1999,G,IL,US,Y,07-Oct-2007,,362 357 195,,Yes,331/630,630,,C,,362,No,No,1+10D,1+10D,1+10D,1+10D,NA,NA,NA,
 332,General Purpose Code,Yes,,No,Yes,24-Nov-2015,G,NY,US,Y,10-Jun-2017,,489,,Yes,212/332/646/917,212,,E,,489,No,No,1+10D,1+10D,1+10D,1+10D,10D,NA,NA,10-digit dialing is permissible for Home NPA Local Calls
 333,Easily Recognizable Code,Yes,,No,No,,N,,,N,,,,,,,,,,,,,No,,,,,,,,
-334,General Purpose Code,Yes,,No,Yes,26-Jan-1994,G,AL,US,Y,15-Jan-1995,,626 254 IL-94-01-033,,Yes,334/483,205,,C,,626,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit dialing permissible at service provider’s discretion
+334,General Purpose Code,Yes,,No,Yes,26-Jan-1994,G,AL,US,Y,15-Jan-1995,,626 254 IL-94-01-033,,Yes,334/483,205,,C,,626,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit dialing permissible at each service provider's discretion
 335,General Purpose Code,Yes,,No,No,,G,,,N,,,,,No,,,,,,,No,No,,,,,,,,
 336,General Purpose Code,Yes,,No,Yes,10-Dec-1997,G,NC,US,Y,15-Dec-1997,,475 469 114 100,,Yes,336/743,910,,E,,475,No,No,10D,1+10D,10D,1+10D,NA,NA,NA,
 337,General Purpose Code,Yes,,No,Yes,15-Apr-1999,G,LA,US,Y,11-Oct-1999,,556 544 188,,No,,318,,C,,,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit permissible at service provider discretion.
@@ -365,7 +365,7 @@ NPA_ID,type_of_code,ASSIGNABLE,EXPLANATION,RESERVED,ASSIGNED,ASSIGNMENT_DT,USE,L
 562,General Purpose Code,Yes,,No,Yes,28-Dec-1994,G,CA,US,Y,25-Jan-1997,,556 544 IL94/12-008 IL-96-01-012,,No,,310,,P,,,No,No,1+10D,1+10D,1+10D,1+10D,NA,NA,NA,
 563,General Purpose Code,Yes,,No,Yes,20-Nov-2000,G,IA,US,Y,25-Mar-2001,,253,,No,,319,,C,,253,No,No,7D,1+10D,10D,1+10D,NA,NA,NA,
 564,General Purpose Code,Yes,,No,Yes,20-Sep-1999,G,WA,US,Y,28-Aug-2017,,620 492 298 239 196,,Yes,"206/564, 360/564 ",360,,P,,620,No,No,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10-digit dialing permissible at service provider discretion
-565,General Purpose Code,Yes,,No,Yes,27-May-2025,G,GA,US,N,06-Dec-2027,Active,637,,Yes,565/912,912,,E,,637,No,Yes,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit local dialing permissible at service provider’s discretion
+565,General Purpose Code,Yes,,No,Yes,27-May-2025,G,GA,US,N,06-Dec-2027,Active,637,,Yes,565/912,912,,E,,637,No,Yes,10D,1+10D,10D,1+10D,1+10D,NA,1+10D,1+10 digit local dialing permissible at each service provider’s discretion
 566,Easily Recognizable Code,Yes,,No,Yes,05-Aug-2011,N,NANP AREA,US,Y,17-Apr-2012,,436 432 424,Non-Geographic Services,No,500/533/544/566/577/588/521/522/523/524/525/526/527/528/529/532/538/542/543,500,Non-Geographic Services,E,,,No,No,NA,NA,NA,NA,NA,NA,NA,
 567,General Purpose Code,Yes,,No,Yes,14-Jul-2000,G,OH,US,Y,01-Jan-2002,,249,,Yes,419/567,419,,E,,249,No,No,10D,1+10D,10D,1+10D,1+10D,NA,NA,Carriers must provide permissive 1+10D dialing for Foreign NPA Local Calls in areas where they provide optional EAS
 568,General Purpose Code,Yes,,No,Yes,29-Sep-2026,G,ALBERTA,CANADA,N,10-Jun-2028,Active,PL-640,,Yes,368/403/568/587/780/825,825,,M,,PL-640,No,Yes,10D,1+10D,10D,1+10D,NA,NA,NA,
